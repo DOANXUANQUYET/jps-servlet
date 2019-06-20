@@ -1,0 +1,6 @@
+++ servlet weld - giúp quản lí bean
+mỗi khi request gửi đến sẽ phải tạo thêm 1 đối tượg để xử lí. khi dùng weld nó sẽ tạo một cái kho chứa những đối tương đã tạo.
+khi request tới nó sẽ check xem trong kho có đối tượng đó chưa. nếu có rồi thì sẽ lấy ra dùng còn chưa có thì sẽ tạo mới.
+nếu không dùng weld thì mỗi lần request tới lại phải new một đối tượng mới. 1000 request thì sẽ phải tạo 1000 đối tượng. -> lãng phí.
+
+----------------------------------------------------------------------------------

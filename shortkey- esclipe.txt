@@ -1,0 +1,4 @@
+ctrl + shift + M : import thu vien con thieu
+ctrl + shift + 0 : xoa thu vien khai bao thua
+ctrl + shift + f : can chinh code
+ctrl + shift + r : tim class

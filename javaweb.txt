@@ -1,0 +1,26 @@
+cơ chế' request -> url -> (bộ lọc filter) -> chia đường dẫn apply pageparent
+dùng template của startbootstrap để làm dao diện view
+
+dùng dashboard để làm dao diện cho admin
+
+chia layout bằng sitemsh dựa vào url lọc xem có chưa tiền tố admin hay không để apply UI, xét có chứa tiền tố api hay không, api thì không apply UI,
+không chứa tiền tố đặc tiện nào thì apply template
+vd 	/admin ... apply UI admin
+	/....	   apply UI template
+	/api ....  k apply template
+
+
+API là nhứng function để thực thi chức năng.
+
+b1 improt thư viện maven, hoặc download
+b2 tạo file decorator.xml cấu hình thư mục và phân loại đường dẫn admin, api.. xứ lí dẫn tới file jsp parent admin,web
+b3 tao 1 filter trong web.xml (filter của sitemesh để lắng nghe khi bắt đầu sự kiện và chia đường dẫn )
+
+*khi cấu hình path dẫn tới file css, hoặc những file khác phải khai báo root[thư mục đó nằm ở đâu] bằng JSTL hoặc EL
+<link href="<c:url value='/template/web/bootstrap/css/bootstrap.min.css' />" rel="stylesheet" type="text/css" media="all" />
+<link href="&{pageContext.request.contextpath}/template/web/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" media="all" />
+
+common(file dinh dang chung header, footer) -> decorators (file parent da apply nhung file comon) -> views( file con, apply file parent , tung noi dung va chuc nang khac nhau)
+
+phan khai bao dinh dang html cua file parent va file child phai giong nhau khi overrider 
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
